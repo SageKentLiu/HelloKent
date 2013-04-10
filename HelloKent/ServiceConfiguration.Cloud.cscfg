@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ServiceConfiguration serviceName="HelloKent" xmlns="http://schemas.microsoft.com/ServiceHosting/2008/10/ServiceConfiguration" osFamily="2" osVersion="*" schemaVersion="2012-10.1.8">
+  <Role name="WebRoleHelloKent">
+    <Instances count="1" />
+    <ConfigurationSettings>
+      <Setting name="Microsoft.WindowsAzure.Plugins.Diagnostics.ConnectionString" value="DefaultEndpointsProtocol=https;AccountName=hellokent;AccountKey=I9yX4j8Lq9Amo0kuAPOt19b6ZAtR5DlCZdHQwM+21HpmKCLbusuHD0uFCdO3MS6DbFXY+LfxEhBmkUisAO4PlQ==" />
+    </ConfigurationSettings>
+  </Role>
+  <Role name="WorkerRoleHelloKent">
+    <Instances count="1" />
+    <ConfigurationSettings>
+      <Setting name="Microsoft.WindowsAzure.Plugins.Diagnostics.ConnectionString" value="DefaultEndpointsProtocol=https;AccountName=hellokent;AccountKey=I9yX4j8Lq9Amo0kuAPOt19b6ZAtR5DlCZdHQwM+21HpmKCLbusuHD0uFCdO3MS6DbFXY+LfxEhBmkUisAO4PlQ==" />
+    </ConfigurationSettings>
+  </Role>
+</ServiceConfiguration>

@@ -1,0 +1,60 @@
+﻿@{
+    ViewBag.Title = "Projection Reporte";
+}
+<h2>Projection Report</h2>
+
+<div>
+    @if (ViewBag.Result != null)
+    {
+        IEnumerable<TestHelloKent.Models.PeriodDeprItem> display = (IEnumerable<TestHelloKent.Models.PeriodDeprItem>)ViewBag.Result;
+        <table class="grid" style="border:1px solid #E8EEF4; border-collapse: collapse">
+            <tr>
+                <th style="background-color: #E8EEF4; border:1px solid #E8EEF4; width:60px">
+                    FYNum
+                </th>
+                <th style="background-color: #E8EEF4; border:1px solid #E8EEF4; width:80px">
+                    Start Date
+                </th>
+                <th style="background-color: #E8EEF4; border:1px solid #E8EEF4; width:80px">
+                    End Date
+                </th>
+                <th style="background-color: #E8EEF4; border:1px solid #E8EEF4; width:100px">
+                    BeginYear Accum
+                </th>
+                <th style="background-color: #E8EEF4; border:1px solid #E8EEF4; width:100px">
+                    Depr Amount
+                </th>
+                <th style="background-color: #E8EEF4; border:1px solid #E8EEF4; width:100px">
+                    CurrntYTD Depr
+                </th>
+                <th style="background-color: #E8EEF4; border:1px solid #E8EEF4; width:120px">
+                    CurrentAccum Depr
+                </th>
+                <th style="background-color: #E8EEF4; border:1px solid #E8EEF4; width:60px">
+                    CalcFlags
+                </th>
+            </tr>
+            @foreach (var item in display)
+            {
+                <tr>
+                    <td align="center">@item.FYNum
+                    </td>
+                    <td align="center">@item.StartDate.ToShortDateString()
+                    </td>
+                    <td align="center">@item.EndDate.ToShortDateString()
+                    </td>
+                    <td align="right">@string.Format("{0:C}", item.BeginYearAccum)
+                    </td>
+                    <td align="right">@string.Format("{0:C}", item.DeprAmount)
+                    </td>
+                    <td align="right">@string.Format("{0:C}", item.CurrntYTDDepr)
+                    </td>
+                    <td align="right">@string.Format("{0:C}", item.CurrentAccumDepr)
+                    </td>
+                    <td align="center">@item.CalcFlags
+                    </td>
+                </tr>
+            }
+        </table>     
+    }
+</div>

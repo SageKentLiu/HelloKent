@@ -1,0 +1,56 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{CC5FD16D-436D-48AD-A40C-5A424C6E3E79}") = "HelloKent", "HelloKent\HelloKent.ccproj", "{587C7B53-7B79-409E-BD75-C3195D4BF558}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebRoleHelloKent", "WebRoleHelloKent\WebRoleHelloKent.csproj", "{CD24B891-A4F2-4C58-9B8E-950D63411986}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebRoleHelloKent.Tests", "WebRoleHelloKent.Tests\WebRoleHelloKent.Tests.csproj", "{51D7B499-E880-4B95-B3FE-FFFA94377922}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WorkerRoleHelloKent", "WorkerRoleHelloKent\WorkerRoleHelloKent.csproj", "{43250489-7971-4C99-A96F-50E1554B4760}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SFACalcEngine", "SFACalcEngine\SFACalcEngine.csproj", "{7A5A1FEA-F620-4B4D-B705-5D284900D08D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SFACalendar", "SFACalendar\SFACalendar.csproj", "{2D94906D-7910-41D7-89AC-985FBE87359C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SFABusinessTypes", "SFABusinessTypes\SFABusinessTypes.csproj", "{BEDC1FC4-FBA4-497A-B6DF-5B2CB881F340}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{587C7B53-7B79-409E-BD75-C3195D4BF558}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{587C7B53-7B79-409E-BD75-C3195D4BF558}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{587C7B53-7B79-409E-BD75-C3195D4BF558}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{587C7B53-7B79-409E-BD75-C3195D4BF558}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CD24B891-A4F2-4C58-9B8E-950D63411986}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CD24B891-A4F2-4C58-9B8E-950D63411986}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CD24B891-A4F2-4C58-9B8E-950D63411986}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CD24B891-A4F2-4C58-9B8E-950D63411986}.Release|Any CPU.Build.0 = Release|Any CPU
+		{51D7B499-E880-4B95-B3FE-FFFA94377922}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{51D7B499-E880-4B95-B3FE-FFFA94377922}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{51D7B499-E880-4B95-B3FE-FFFA94377922}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{51D7B499-E880-4B95-B3FE-FFFA94377922}.Release|Any CPU.Build.0 = Release|Any CPU
+		{43250489-7971-4C99-A96F-50E1554B4760}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{43250489-7971-4C99-A96F-50E1554B4760}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{43250489-7971-4C99-A96F-50E1554B4760}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{43250489-7971-4C99-A96F-50E1554B4760}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7A5A1FEA-F620-4B4D-B705-5D284900D08D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7A5A1FEA-F620-4B4D-B705-5D284900D08D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7A5A1FEA-F620-4B4D-B705-5D284900D08D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7A5A1FEA-F620-4B4D-B705-5D284900D08D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2D94906D-7910-41D7-89AC-985FBE87359C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2D94906D-7910-41D7-89AC-985FBE87359C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2D94906D-7910-41D7-89AC-985FBE87359C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2D94906D-7910-41D7-89AC-985FBE87359C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BEDC1FC4-FBA4-497A-B6DF-5B2CB881F340}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BEDC1FC4-FBA4-497A-B6DF-5B2CB881F340}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BEDC1FC4-FBA4-497A-B6DF-5B2CB881F340}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BEDC1FC4-FBA4-497A-B6DF-5B2CB881F340}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

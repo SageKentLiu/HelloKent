@@ -1,0 +1,73 @@
+﻿@{
+//    ViewBag.Title = "Projection Reporte";
+}
+
+<div>
+    @if (ViewBag.ResultList != null)
+    {
+        if(ViewBag.Title == "Projection Report")
+        {
+            <h2>Projection Report</h2>
+        
+            IEnumerable<TestHelloKent.Models.PeriodDeprItem> display = (IEnumerable<TestHelloKent.Models.PeriodDeprItem>)ViewBag.ResultList;
+            <table class="grid" style="border:1px solid #E8EEF4; border-collapse: collapse">
+                <tr align="center">
+                    <td><b>Start Date</b></td>
+                    <td><b>End Date</b></td>
+                    <td><b>Prior Year Accum</b></td>
+                    <td><b>Begin Accum</b></td>
+                    <td><b>Depr Amount</b></td>
+                    <td><b>End Accum</b></td>
+                    <td><b>Accum Depre</b></td>
+                    <td><b>Calc Flags</b></td>
+                </tr>
+                @foreach (var item in display)
+                {
+                    <tr>
+                        <td align="center">@item.StartDate.ToShortDateString()</td>
+                        <td align="center">@item.EndDate.ToShortDateString()</td>
+                        <td align="right">@string.Format("{0:C}", item.BeginYearAccum)</td>
+                        <td align="right">@string.Format("{0:C}", item.BeginYearYTDExpense)</td>
+                        <td align="right">@string.Format("{0:C}", item.DeprAmount)</td>
+                        <td align="right">@string.Format("{0:C}", item.CurrntYTDDepr)</td>
+                        <td align="right">@string.Format("{0:C}", item.BeginYearAccum + item.BeginYearYTDExpense + item.DeprAmount)</td>
+                        <td align="center">@item.CalcFlags</td>
+                    </tr>
+                }
+            </table>  
+        }   
+        else
+        {
+            <h2>Depreciation</h2>
+        
+            TestHelloKent.Models.PeriodDeprItem item = (TestHelloKent.Models.PeriodDeprItem)ViewBag.ResultList;
+            <table class="grid" style="border:1px solid #E8EEF4; border-collapse: collapse">
+                <tr align="center">
+                    <td><b>Start Date</b></td>
+                    <td><b>End Date</b></td>
+                    <td><b>Prior Year Accum</b></td>
+                    <td><b>Begin Accum</b></td>
+                    <td><b>Depr Amount</b></td>
+                    <td><b>End Accum</b></td>
+                    <td><b>Accum Depre</b></td>
+                    <td><b>Calc Flags</b></td>
+                </tr>
+                <tr>
+                    <td align="center">@item.StartDate.ToShortDateString()</td>
+                    <td align="center">@item.EndDate.ToShortDateString()</td>
+                    <td align="right">@string.Format("{0:C}", item.BeginYearAccum)</td>
+                    <td align="right">@string.Format("{0:C}", item.BeginYearYTDExpense)</td>
+                    <td align="right">@string.Format("{0:C}", item.DeprAmount)</td>
+                    <td align="right">@string.Format("{0:C}", item.CurrntYTDDepr)</td>
+                    <td align="right">@string.Format("{0:C}", item.BeginYearAccum + item.BeginYearYTDExpense + item.DeprAmount)</td>
+                    <td align="center">@item.CalcFlags</td>
+                </tr>
+            </table>        
+        }
+    }
+    @if (ViewBag.Result != null)
+    {
+        <h2>@string.Format("{0:C}", ViewBag.Title)</h2>
+        <p>@string.Format("{0:C}", ViewBag.Result)</p>
+    }
+</div>

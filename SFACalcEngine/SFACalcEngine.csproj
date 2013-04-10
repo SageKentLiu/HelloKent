@@ -1,0 +1,108 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{7A5A1FEA-F620-4B4D-B705-5D284900D08D}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SFACalcEngine</RootNamespace>
+    <AssemblyName>SFACalcEngine</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ACEHandler.cs" />
+    <Compile Include="BAFASDeprScheduleItem.cs" />
+    <Compile Include="BADefaultCalcLookup.cs" />
+    <Compile Include="FasBusinessUse.cs" />
+    <Compile Include="PeriodDetailDeprInfo.cs" />
+    <Compile Include="CalcEngine.cs" />
+    <Compile Include="CalcHelper.cs" />
+    <Compile Include="Conventions\FullMonthConvention.cs" />
+    <Compile Include="Conventions\FullPeriodConvention.cs" />
+    <Compile Include="Conventions\FYMonthBasedConvention.cs" />
+    <Compile Include="Conventions\HalfYearConvention.cs" />
+    <Compile Include="Conventions\HYMonthbasedConvention.cs" />
+    <Compile Include="Conventions\MidMonthConvention.cs" />
+    <Compile Include="Conventions\MidPeriodConvention.cs" />
+    <Compile Include="Conventions\MidQuarterConvention.cs" />
+    <Compile Include="Conventions\ModHalfYearConvention.cs" />
+    <Compile Include="Conventions\NextPeriodConvention.cs" />
+    <Compile Include="Conventions\NoConvention.cs" />
+    <Compile Include="Currency.cs" />
+    <Compile Include="DeprMethods\AltACRSFormula.cs" />
+    <Compile Include="DeprMethods\AltMACRSFormula.cs" />
+    <Compile Include="DeprMethods\AmortizationDeprMethod.cs" />
+    <Compile Include="DeprMethods\DecliningBalanceMethod.cs" />
+    <Compile Include="DeprAllocator.cs" />
+    <Compile Include="DeprMethods\DecliningBalanceMethodNoSwitch.cs" />
+    <Compile Include="DeprMethods\MACRSFormula.cs" />
+    <Compile Include="DeprMethods\NONDeprMethod.cs" />
+    <Compile Include="DeprMethods\RVMethod.cs" />
+    <Compile Include="DeprMethods\SYDMethod.cs" />
+    <Compile Include="FiscalYearCalcer.cs" />
+    <Compile Include="Interfaces\IBAACEInformation.cs" />
+    <Compile Include="Interfaces\IBAAvgConvention.cs" />
+    <Compile Include="Interfaces\IBACalcEngine.cs" />
+    <Compile Include="Interfaces\IBACalcLookUp.cs" />
+    <Compile Include="Interfaces\IBADeprMethod.cs" />
+    <Compile Include="Interfaces\IBADeprScheduleItem.cs" />
+    <Compile Include="Interfaces\IBADeprTableSupport.cs" />
+    <Compile Include="Interfaces\IBAFASAdjustmentAllocator.cs" />
+    <Compile Include="Interfaces\IBAPeriodDeprItem.cs" />
+    <Compile Include="Interfaces\IBAPeriodDetailDeprInfo.cs" />
+    <Compile Include="Interfaces\IBASwitchDepr.cs" />
+    <Compile Include="Conventions\ModMidPeriodConvention.cs" />
+    <Compile Include="MonthlyYear.cs" />
+    <Compile Include="PeriodDeprItem.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="DeprMethods\StraightLineMethod.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SFABusinessTypes\SFABusinessTypes.csproj">
+      <Project>{BEDC1FC4-FBA4-497A-B6DF-5B2CB881F340}</Project>
+      <Name>SFABusinessTypes</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SFACalendar\SFACalendar.csproj">
+      <Project>{2D94906D-7910-41D7-89AC-985FBE87359C}</Project>
+      <Name>SFACalendar</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

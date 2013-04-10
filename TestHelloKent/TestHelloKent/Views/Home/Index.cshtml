@@ -1,0 +1,165 @@
+﻿@model TestHelloKent.Models.DeprScheduleItemForView
+@{
+    ViewBag.Title = "Asset Information";
+}
+
+<h3>Asset Information</h3>
+
+@using (Html.BeginForm("Depreciate", "Home", FormMethod.Post))
+{
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <table>
+        <legend>Asset Info</legend>
+
+        <tr>
+        <td  style="width:50em">
+            <b>URL</b>
+        </td>
+        <td  style="width:200em">
+            @Html.DropDownListFor(model => model.URL, (SelectList)ViewBag.URLList)
+        </td>
+        </tr>
+
+        <tr>
+        <td>
+            <b>Property Type</b>
+        </td>
+        <td>
+            @Html.DropDownListFor(model => model.PropertyType, (SelectList)ViewBag.ProperTypeList)
+            @Html.ValidationMessageFor(model => model.PropertyType)
+        </td>
+        </tr>
+
+        <tr>
+        <td>
+            <b>Placed In Service Date</b>
+        </td>
+        <td>
+            @Html.EditorFor(model => model.PlaceInServiceDate)
+            @*@Html.ValidationMessageFor(model => model.PlaceInServiceDate)*@
+        </td>
+        </tr>
+
+        <tr>
+        <td>
+            <b>Acquisition Value</b>
+        </td>
+        <td>
+            @Html.EditorFor(model => model.AcquisitionValue)
+            @Html.ValidationMessageFor(model => model.AcquisitionValue)
+        </td>
+        </tr>
+
+        <tr>
+        <td>
+            <b>Depreciation Method</b>
+        </td>
+          <td align="left" style="width:7em">      
+            @Html.DropDownListFor(model => model.DepreciationMethod, (SelectList)ViewBag.DeprMethodList)
+           </td>  
+            </tr>   
+ <tr>
+        <td align="left" style="width:5em">
+            <b>Depreciation Percent</b>
+        </td>
+        <td>
+            @Html.DropDownListFor(model => model.DepreciationPercent, (SelectList)ViewBag.DeprPctList)
+            @Html.ValidationMessageFor(model => model.DepreciationMethod)
+        </td>
+        </tr>
+
+        <tr>
+        <td>
+            <b>Estimated Life</b>
+        </td>
+        <td>
+            @Html.EditorFor(model => model.EstimatedLife)
+            @Html.ValidationMessageFor(model => model.EstimatedLife)
+        </td>
+        </tr>
+            
+        <tr>
+        <td>
+            <b>Section 179</b>
+        </td>
+        <td>
+            @Html.EditorFor(model => model.Section179)
+            @Html.ValidationMessageFor(model => model.Section179)
+        </td>
+        </tr>
+
+        <tr>
+        <td>
+            <b>168K Percent</b>
+        </td>
+        <td>
+            @Html.EditorFor(model => model.Bonus911Percent)
+            @Html.ValidationMessageFor(model => model.Bonus911Percent)
+        </td>
+        </tr>
+
+        <tr>
+        <td>
+            <b>Salvage Value</b>
+        </td>
+        <td>
+            @Html.EditorFor(model => model.SalvageDeduction)
+            @Html.ValidationMessageFor(model => model.SalvageDeduction)
+        </td>
+        </tr>
+
+       <tr>
+        <td>
+            <b>ITC Amount</b>
+        </td>
+        <td>
+            @Html.EditorFor(model => model.ITCAmount)
+            @Html.ValidationMessageFor(model => model.ITCAmount)
+        </td>
+        </tr>
+
+       <tr>
+        <td>
+            <b>ITC Reduce</b>
+        </td>
+        <td>
+            @Html.EditorFor(model => model.ITCReduce)
+            @Html.ValidationMessageFor(model => model.ITCReduce)
+        </td>
+        </tr>
+
+        <tr>
+        <td>
+            <b>Convention</b>
+        </td>
+        <td>
+            @Html.DropDownListFor(model => model.Convention, (SelectList)ViewBag.ConventionList)
+            @Html.ValidationMessageFor(model => model.DepreciationMethod)
+        </td>
+        </tr>
+            
+         <tr>
+        <td>
+            <b>Run Date</b>
+        </td>
+        <td>
+            @Html.EditorFor(model => model.RunDate)
+        </td>
+        </tr>
+            
+        <tr>
+        <td></td>
+        @*<td><input type="submit" value="Depreciate" align="center" style="width:10em"/></td>*@
+            <td>
+                 <input type="submit" value="Calculate" align="center" style="width:10em"/>
+            </td>
+        </tr>
+       
+    </table>
+    </fieldset>
+}  
+
+
+

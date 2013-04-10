@@ -129,11 +129,11 @@ namespace WebRoleHelloKent.Controllers
             Schedule.Bonus911Percent = DeprBook.Bonus911Percent;
             Schedule.AvgConvention = DeprBook.Convention;
 
-            Schedule.AddBusinessUseEntry(new DateTime(2013, 1, 1), 0.7, 0);
-            Schedule.AddBusinessUseEntry(new DateTime(2013, 1, 1), 0.7, 0);
-            Schedule.AddBusinessUseEntry(new DateTime(2011, 1, 1), 0.8, 0);
-            Schedule.AddBusinessUseEntry(new DateTime(2014, 1, 1), 0.6, 0);
-            Schedule.AddBusinessUseEntry(new DateTime(2013, 1, 1), 0.7, 0);
+            //Schedule.AddBusinessUseEntry(new DateTime(2013, 1, 1), 0.7, 0);
+            //Schedule.AddBusinessUseEntry(new DateTime(2013, 1, 1), 0.7, 0);
+            //Schedule.AddBusinessUseEntry(new DateTime(2011, 1, 1), 0.8, 0);
+            //Schedule.AddBusinessUseEntry(new DateTime(2014, 1, 1), 0.6, 0);
+            //Schedule.AddBusinessUseEntry(new DateTime(2013, 1, 1), 0.7, 0);
 
         }
 

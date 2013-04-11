@@ -133,12 +133,12 @@ namespace SFACalcEngine
             bRet = m_pObjDeprMethod.IsFiscalYearBased;
             dRemainingDeprAmt = m_pObjDeprMethod.RemainingDeprAmt;
 
-            //IBADeprTableSupport tableSupp = (IBADeprTableSupport)m_pObjDeprMethod;
-            //if (tableSupp != null)
-            //{
-            //    bDefersDepr = tableSupp.DeferShortYearAmount;
-            //}
-            //else
+            IBADeprTableSupport tableSupp = (m_pObjDeprMethod) as IBADeprTableSupport;
+            if (tableSupp != null)
+            {
+                bDefersDepr = tableSupp.DeferShortYearAmount;
+            }
+            else
                 bDefersDepr = false;
 
             if (bRet)

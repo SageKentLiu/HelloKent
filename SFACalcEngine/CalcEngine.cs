@@ -753,25 +753,23 @@ KENT */
                 iFYNum = iFYPISStartNum;
             else
                 iFYNum = iFYStartNum;
-/* KENT
-	if ( !!tableSupp )
-	{
-		if ( FAILED(hr = tableSupp->DeferShortYearAmount(&bDefersDepr)) )
-			bDefersDepr = VARIANT_FALSE;
-		if ( FAILED(hr = tableSupp->InPostRecovery(&bPostLife)) )
-		{
-			if ( hr == E_NOTIMPL )
-			{
-				bPostLife = (iFYNum >= iFYEndNum + 1) ? VARIANT_TRUE : VARIANT_FALSE;
-			}
-			else
-				bPostLife = VARIANT_FALSE;
-		}
-	}
-	else
- KENT */
-            bPostLife = (iFYNum >= iFYEndNum + 1) ? true : false;
 
+	        if ( tableSupp != null )
+	        {
+                bDefersDepr = false;
+ 		        bPostLife = false;
+                bDefersDepr = tableSupp.DeferShortYearAmount;
+                try
+                {
+                    bPostLife = tableSupp.InPostRecovery;
+                }
+                catch
+                {
+			        bPostLife = (iFYNum >= iFYEndNum + 1) ? true : false;
+		        }
+	        }
+	        else
+                bPostLife = (iFYNum >= iFYEndNum + 1) ? true : false;
 
 	        if ( bPostLife )
 	        {
@@ -1011,14 +1009,14 @@ KENT */
                     {
                         if (!bPostLife)
                         {
-                            bPostLife = tableSupp.InPostRecovery;
+                            bPostLife = false;
+                            try
                             {
-                                //if (hr == false)
-                                //{
-                                //    bPostLife = (iFYNum >= iFYEndNum + 1) ? true : false;
-                                //}
-                                //else
-                                    bPostLife = false;
+                                bPostLife = tableSupp.InPostRecovery;
+                            }
+                            catch
+                            {
+                                bPostLife = (iFYNum >= iFYEndNum + 1) ? true : false;
                             }
                         }
                     }
@@ -1362,14 +1360,14 @@ KENT */
                         {
                             if (!bPostLife)
                             {
-                                bPostLife = tableSupp.InPostRecovery;
+                                bPostLife = false;
+                                try
                                 {
-                                    //if (hr == false)
-                                    //{
-                                    //    bPostLife = (iFYNum >= iFYEndNum) ? true : false;
-                                    //}
-                                    //else
-                                        bPostLife = false;
+                                    bPostLife = tableSupp.InPostRecovery;
+                                }
+                                catch
+                                {
+                                    bPostLife = (iFYNum >= iFYEndNum) ? true : false;
                                 }
                             }
                         }
